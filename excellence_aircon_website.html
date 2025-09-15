@@ -1,0 +1,889 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Excellence Aircon - More Than a Company, We're a Commitment to Your Success</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>❄️</text></svg>">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #fff;
+        }
+
+        .logo-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(45deg, #ff6b35, #f7931e);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+            font-weight: 500;
+        }
+
+        nav a:hover {
+            color: #64b5f6;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.9) 0%, rgba(118, 75, 162, 0.9) 100%), 
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><polygon fill="%23ffffff10" points="0,0 1000,300 1000,1000 0,700"/><polygon fill="%23ffffff05" points="0,300 1000,0 1000,400 0,1000"/></svg>');
+            color: white;
+            padding: 120px 0 80px;
+            text-align: center;
+            margin-top: 80px;
+            background-attachment: fixed;
+            background-size: cover;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+        }
+
+        .cta-button {
+            background: #ff6b35;
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: inline-block;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(255, 107, 53, 0.3);
+        }
+
+        /* Sections */
+        section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #2c3e50;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: #ff6b35;
+            margin: 20px auto;
+            border-radius: 2px;
+        }
+
+        /* About Section */
+        .about {
+            background: #f8f9fa;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .about-stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #ff6b35;
+            display: block;
+        }
+
+        /* Vision Section */
+        .vision-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .vision-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .vision-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .vision-icon {
+            width: 60px;
+            height: 60px;
+            background: #ff6b35;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            font-size: 1.5rem;
+            color: white;
+        }
+
+        /* Services Section */
+        .services {
+            background: #f8f9fa;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .service-card h3 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .service-list {
+            list-style: none;
+        }
+
+        .service-list li {
+            padding: 0.5rem 0;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .service-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #ff6b35;
+            font-weight: bold;
+        }
+
+        /* Expertise Section */
+        .expertise-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .expertise-item {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1.5rem;
+            border-radius: 15px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .expertise-item:hover {
+            transform: translateY(-5px);
+        }
+
+        /* Installation Gallery */
+        .gallery {
+            background: #f8f9fa;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .gallery-item {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .gallery-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            background: linear-gradient(45deg, #e3f2fd, #bbdefb);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            color: #1976d2;
+            font-weight: 500;
+        }
+
+        .gallery-content {
+            padding: 1.5rem;
+        }
+
+        /* PDF Image Extractor */
+        .pdf-extractor {
+            background: #fff;
+            padding: 2rem;
+            margin: 2rem 0;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .file-input {
+            margin: 1rem 0;
+            padding: 10px;
+            border: 2px dashed #ddd;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .extracted-images {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .extracted-image {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        /* Contact Section */
+        .contact {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+        }
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+
+        .contact-info {
+            font-size: 1.1rem;
+        }
+
+        .contact-info h3 {
+            margin-bottom: 1rem;
+            color: #64b5f6;
+        }
+
+        .contact-info p {
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-form {
+            background: rgba(255,255,255,0.1);
+            padding: 2rem;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            background: rgba(255,255,255,0.9);
+            font-size: 1rem;
+        }
+
+        .form-group textarea {
+            height: 120px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            background: #ff6b35;
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+
+        .submit-btn:hover {
+            background: #e55a2b;
+        }
+
+        /* Footer */
+        footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        /* WhatsApp Button */
+        .whatsapp-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            background: #25d366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.8rem;
+            text-decoration: none;
+            z-index: 1000;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .whatsapp-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6);
+        }
+
+        /* Brands Section */
+        .brands {
+            background: #fff;
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .brands-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .brand-item {
+            padding: 1rem;
+            background: #f8f9fa;
+            border-radius: 10px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #2c3e50;
+            transition: transform 0.3s;
+        }
+
+        .brand-item:hover {
+            transform: translateY(-5px);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 1rem;
+            }
+
+            .hero {
+                padding: 100px 0 60px;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .about-content,
+            .contact-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .about-stats {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 60px 0;
+            }
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Animation */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        /* Mobile Menu */
+        .mobile-menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            padding: 5px;
+        }
+
+        .mobile-menu-toggle span {
+            width: 25px;
+            height: 3px;
+            background: white;
+            margin: 2px 0;
+            transition: 0.3s;
+        }
+
+        @media (max-width: 768px) {
+            .mobile-menu-toggle {
+                display: flex;
+            }
+
+            nav {
+                display: none;
+                width: 100%;
+            }
+
+            nav.active {
+                display: block;
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 1rem;
+                padding: 1rem 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <div class="logo-icon">❄️</div>
+                    <span>EXCELLENCE AIRCON</span>
+                </div>
+                <div class="mobile-menu-toggle" onclick="toggleMobileMenu()">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <nav id="nav-menu">
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#vision">Vision</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#expertise">Expertise</a></li>
+                        <li><a href="#gallery">Installations</a></li>
+                        <li><a href="#brands">Brands</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <h1>EXCELLENCE AIRCON</h1>
+            <p>More Than a Company, We're a Commitment to Your Success</p>
+            <p>We built our successful business based on one simple word "TRUST"</p>
+            <a href="#contact" class="cta-button">Get Quote Now</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">About Us</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Since establishment in 2021, EXCELLENCE AIRCON has achieved tremendous growth as one of the leading companies in the region providing a wide spectrum of generic and deals in multiple brands like DAIKIN, MITSUBISHI and others.</p>
+                    
+                    <p>Through our operations, we provide integrated design, smooth functionality and efficiency from start to finish. Our group of engineers specialized in design, sales, installation and maintenance of Air-conditioning & Ventilation solutions working together to deliver best and well in time.</p>
+                    
+                    <p>We work with our clients life cycle from inception to implementation with supplying capabilities to all the required equipment, devices, materials and after sales services, delivering unique technologies and end-to-end solutions.</p>
+                </div>
+                <div class="about-stats">
+                    <div class="stat-card">
+                        <span class="stat-number">2021</span>
+                        <p>Established Year</p>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number">24/7</span>
+                        <p>Service Support</p>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number">100%</span>
+                        <p>Client Satisfaction</p>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number">Trust</span>
+                        <p>Our Foundation</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Vision Section -->
+    <section id="vision">
+        <div class="container">
+            <h2 class="section-title">Our Vision</h2>
+            <div class="vision-grid">
+                <div class="vision-card">
+                    <div class="vision-icon">🏆</div>
+                    <h3>Industry Leader</h3>
+                    <p>To become a leader in our industries by offering clients with utmost happiness.</p>
+                </div>
+                <div class="vision-card">
+                    <div class="vision-icon">💯</div>
+                    <h3>Complete Satisfaction</h3>
+                    <p>Providing the best complete satisfaction and in most cost effectiveness services that are trustworthy.</p>
+                </div>
+                <div class="vision-card">
+                    <div class="vision-icon">⚡</div>
+                    <h3>High Caliber</h3>
+                    <p>Dependable and high Caliber solutions for all your HVAC needs.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <h2 class="section-title">Why Choose Us?</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>🏢 Commercial Services</h3>
+                    <p>Enterprise HVAC Systems for Businesses including building automation and energy management solutions.</p>
+                    <ul class="service-list">
+                        <li>Building Automation Systems</li>
+                        <li>Energy Management Solutions</li>
+                        <li>Commercial HVAC Design</li>
+                        <li>Industrial Applications</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <h3>🏠 Residential Services</h3>
+                    <p>Complete HVAC Solution for Homes Including Installation, Maintenance and Emergency repair services.</p>
+                    <ul class="service-list">
+                        <li>Home AC Installation</li>
+                        <li>Maintenance Services</li>
+                        <li>Emergency Repairs</li>
+                        <li>Energy Efficient Solutions</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <h3>🔧 After Sales Service</h3>
+                    <p>Our service department has the resources and expertise with 24 hours breakdown service 7 days a week.</p>
+                    <ul class="service-list">
+                        <li>AMC Contracts</li>
+                        <li>Certified Technicians</li>
+                        <li>Plant Audits</li>
+                        <li>Upgrades & Replacement Advice</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Expertise Section -->
+    <section id="expertise">
+        <div class="container">
+            <h2 class="section-title">Experts In</h2>
+            <div class="expertise-grid">
+                <div class="expertise-item">
+                    <h4>Centralized VRV / VRF System</h4>
+                </div>
+                <div class="expertise-item">
+                    <h4>Ductable, Cassette, Split System</h4>
+                </div>
+                <div class="expertise-item">
+                    <h4>Chilled Water System</h4>
+                </div>
+                <div class="expertise-item">
+                    <h4>Ducting Works And Accessories</h4>
+                </div>
+                <div class="expertise-item">
+                    <h4>Air Handling Units And Accessories</h4>
+                </div>
+                <div class="expertise-item">
+                    <h4>After Sales Service</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Installation Gallery -->
+    <section id="gallery" class="gallery">
+        <div class="container">
+            <h2 class="section-title">Our Installations</h2>
+            
+            <!-- PDF Image Extractor -->
+            <div class="pdf-extractor">
+                <h3>Extract Images from PDF Portfolio</h3>
+                <div class="file-input">
+                    <input type="file" id="pdfInput" accept=".pdf" onchange="extractImagesFromPDF(event)">
+                    <p>Select your PDF file to extract installation images</p>
+                </div>
+                <div id="extractedImages" class="extracted-images"></div>
+            </div>
+
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <div class="gallery-image">VRV/VRF Installation Project</div>
+                    <div class="gallery-content">
+                        <h4>Commercial VRV System</h4>
+                        <p>High-efficiency VRV system installation for commercial building with advanced controls.</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-image">Ducting Work Project</div>
+                    <div class="gallery-content">
+                        <h4>Ducting & Ventilation</h4>
+                        <p>Complete ducting solution with proper ventilation system design and installation.</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-image">Cassette AC Installation</div>
+                    <div class="gallery-content">
+                        <h4>Cassette AC Systems</h4>
+                        <p>Professional installation of cassette air conditioning units with aesthetic ceiling integration.</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-image">Chilled Water System</div>
+                    <div class="gallery-content">
+                        <h4>Central Chilled Water</h4>
+                        <p>Large-scale chilled water system for industrial and commercial applications.</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-image">Split AC Installation</div>
+                    <div class="gallery-content">
+                        <h4>Split AC Systems</h4>
+                        <p>Residential and commercial split AC installations with premium brands like Daikin & Mitsubishi.</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-image">AHU Installation</div>
+                    <div class="gallery-content">
+                        <h4>Air Handling Units</h4>
+                        <p>Custom AHU installations with complete accessories and control systems.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Brands Section -->
+    <section id="brands" class="brands">
+        <div class="container">
+            <h2 class="section-title">Our Brands</h2>
+            <div class="brands-grid">
+                <div class="brand-item">DAIKIN</div>
+                <div class="brand-item">MITSUBISHI</div>
+                <div class="brand-item">BLUE STAR</div>
+                <div class="brand-item">CARRIER</div>
+                <div class="brand-item">LG</div>
+                <div class="brand-item">VOLTAS</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Contact Us</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Get In Touch</h3>
+                    <p><strong>Address:</strong></p>
+                    <p>Block - 113, 14/B, Ekta Aashiyana CHSL,</p>
+                    <p>Golibar Road, Santacruz East,</p>
+                    <p>Mumbai, Maharashtra – 400055</p>
+                    
+                    <p><strong>Mobile:</strong> +91 76664 86833</p>
+                    <p><strong>Email:</strong> excellenceaircon.projects@gmail.com</p>
+                    
+                    <p style="margin-top: 2rem;">We work with our clients life cycle from inception to implementation, delivering unique technologies and end-to-end solutions.</p>
+                </div>
+                <div class="contact-form">
+                    <h3>Send Us a Message</h3>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <input type="text" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" placeholder="Your Phone" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" placeholder="Service Required">
+                        </div>
+                        <div class="form-group">
+                            <textarea placeholder="Your Message"></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Excellence Aircon. All rights reserved. | More Than a Company, We're a Commitment to Your Success.</p>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Button -->
+    <a href="https://wa.me/917666486833?text=Hello%20Excellence%20Aircon,%20I%20would%20like%20to%20know%20more%20about%20your%20HVAC%20services" class="whatsapp-btn" target="_blank">
+        📱
+    </a>
+
+    <!-- PDF.js Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.min.js"></script>
+
+    <script>
+        // Set PDF.js worker
+        pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.worker.min.js';
+
+        // Mobile menu toggle
+        function toggleM
